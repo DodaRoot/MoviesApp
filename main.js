@@ -5,6 +5,7 @@ const params = {
     },
 }
 
+
 function searchMovie() {
     let input = document.querySelector('#inputMovie').value
     let url = `https://moviesdatabase.p.rapidapi.com/titles/search/title/${input}`
@@ -13,7 +14,24 @@ function searchMovie() {
             return response.json()
         })
         .then((data) => {
-            console.log(data)
+            console.log(data.results)
+            for(let item of data.results) {
+                // In case nothing is there
+                if (item.primaryImage == null) {return null}
+                if (item.originalTitleText == null) {return null}
+                // Operations
+                let title = item.originalTitleText.text
+                let link = item.primaryImage.url
+                let container = document.createElement('div')
+                container.setAttribute('class' , 'container')
+                let img = document.createElement('img')
+                img.src = link
+                let text = document.createElement('h3')
+                text.innerText = title
+                document.body.append(container)
+                container.append(img)
+                container.append(text)
+            }
         })
         .catch((error) => {
             console.log(error)
