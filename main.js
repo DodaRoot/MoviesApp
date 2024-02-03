@@ -14,11 +14,10 @@ function searchMovie() {
             return response.json()
         })
         .then((data) => {
-            console.log(data.results)
             for(let item of data.results) {
                 // In case nothing is there
-                if (item.primaryImage == null) {return null}
-                if (item.originalTitleText == null) {return null}
+                if (item.primaryImage == null) { continue }
+                if (item.originalTitleText == null) { continue }
                 // Operations
                 let title = item.originalTitleText.text
                 let link = item.primaryImage.url
