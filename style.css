@@ -1,10 +1,45 @@
+:root {
+    --navBackColor: rgb(230, 230, 230);
+    --backgroundColor: rgb(255, 255, 255);
+}
+body {
+    scroll-behavior: smooth;
+    background-color: var(--backgroundColor);
+}
+nav {
+    background-color: var(--navBackColor);
+    font-size: 20px;
+    font-weight: 400;
+}
 #carouselExampleRide {
     margin-top: 40px;
 }
-#carouselExampleRide .img {
+.carousel-inner .img {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
-    height: 500px;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.carousel-inner .img:hover .content {
+    top: 0;
+    opacity: 0.9;
+}
+.carousel-inner .content {
+    position: absolute;
+    top: -100%;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    height: 100%;
+    width: 60%;
+    background-color: rgb(0, 0, 0);
+    transition: .5s all ease-in-out;
 }
