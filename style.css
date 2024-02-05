@@ -1,7 +1,10 @@
-.container {
-    width: 100%;
+#carouselExampleRide {
+    margin-top: 40px;
 }
-.container img {
-    max-width: 120px;
-    max-height: 120px;
+#carouselExampleRide .img {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
 }
