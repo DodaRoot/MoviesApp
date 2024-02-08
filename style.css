@@ -3,6 +3,7 @@
     --backgroundColor: rgb(255, 255, 255);
 }
 body {
+    overflow: hidden;
     scroll-behavior: smooth;
     background-color: var(--backgroundColor);
 }
@@ -15,8 +16,8 @@ nav {
     margin-top: 40px;
 }
 .carousel-inner .img {
+    background-size: 40% 100%;
     background-position: center;
-    background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
     height: 40vh;
@@ -42,4 +43,33 @@ nav {
     width: 60%;
     background-color: rgb(0, 0, 0);
     transition: .5s all ease-in-out;
+}
+
+.card {
+    margin-top: 20px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.card .info {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    top: -10%;
+    left: 30%;
+    z-index: 1;
+    border-radius: 20%;
+    color: white;
+}
+.card .info button {
+    width: 40%;
+}
+.card:hover .info {
+    display: flex;
 }
