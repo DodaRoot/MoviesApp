@@ -3,7 +3,6 @@
     --backgroundColor: rgb(255, 255, 255);
 }
 body {
-    overflow: hidden;
     scroll-behavior: smooth;
     background-color: var(--backgroundColor);
 }
@@ -12,39 +11,36 @@ nav {
     font-size: 20px;
     font-weight: 400;
 }
-#carouselExampleRide {
-    margin-top: 40px;
+#carouselExampleCaptions {
+    background-color: var(--navBackColor);
+    overflow: none;
+    border-radius: 30px;
 }
-.carousel-inner .img {
-    background-size: 40% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+
+.carousel-item img {
+    margin: auto;
+    max-width: 512px;
+    max-height: 512px;
+    padding: 10px;
 }
-.carousel-inner .img:hover .content {
-    top: 0;
-    opacity: 0.9;
-}
-.carousel-inner .content {
-    position: absolute;
-    top: -100%;
-    color: rgb(255, 255, 255);
+.carousel-item .info {
+    opacity: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
     height: 100%;
-    width: 60%;
-    background-color: rgb(0, 0, 0);
-    transition: .5s all ease-in-out;
+    background-color: rgb(0, 0, 0, 0.9);
+    color: white;
+    transition: all 0.5s ease-in-out;
 }
-
+.carousel-item:hover .info {
+    opacity: 1;
+}
 .card {
     margin-top: 20px;
     height: 300px;
@@ -57,19 +53,34 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100%;
+    height: 0%;
     width: 100%;
+    font-size: medium;
     background-color: black;
     position: absolute;
-    top: -10%;
-    left: 30%;
+    left: 0;
+    bottom: 0;
     z-index: 1;
-    border-radius: 20%;
     color: white;
+    pointer-events: none;
 }
-.card .info button {
+.card .info a {
     width: 40%;
 }
 .card:hover .info {
     display: flex;
+    height: 30%;
 }
+.card:active {
+    transform: scale(0.9);
+}
+
+@media screen and (max-width: 700px) {
+    .carousel-item img {
+        max-width: 310px;
+        max-height: 310px;
+    }
+    .card:hover .info {
+        display: none;
+    }
+  }
