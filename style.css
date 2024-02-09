@@ -1,22 +1,28 @@
 :root {
-    --navBackColor: rgb(230, 230, 230);
+    --navBackColor: rgb(65, 65, 65);
     --backgroundColor: rgb(255, 255, 255);
+    --defaultTextColor: rgb(255, 255, 255);
 }
 body {
     scroll-behavior: smooth;
     background-color: var(--backgroundColor);
+    color: var(--defaultTextColor);
 }
 nav {
     background-color: var(--navBackColor);
     font-size: 20px;
     font-weight: 400;
 }
+
 #carouselExampleCaptions {
     background-color: var(--navBackColor);
     overflow: none;
     border-radius: 30px;
+} 
+#carouselExampleCaptions span {
+    width: 50%;
+    height: 50%;
 }
-
 .carousel-item img {
     margin: auto;
     max-width: 512px;
@@ -31,25 +37,25 @@ nav {
     align-items: center;
     position: absolute;
     top: 0;
-    left: 10%;
-    width: 80%;
+    left: 20%;
+    width: 60%;
     height: 100%;
     background-color: rgb(0, 0, 0, 0.9);
-    color: white;
+    color: var(--defaultTextColor);
     transition: all 0.5s ease-in-out;
 }
 .carousel-item:hover .info {
     opacity: 1;
 }
 .card {
-    margin-top: 20px;
-    height: 300px;
+    height: 50vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .card .info {
-    display: none;
+    display: flex;
+    opacity: 0;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -61,14 +67,15 @@ nav {
     left: 0;
     bottom: 0;
     z-index: 1;
-    color: white;
+    color: var(--defaultTextColor);
     pointer-events: none;
+    transition: all .5s ease-in-out;
 }
 .card .info a {
     width: 40%;
 }
 .card:hover .info {
-    display: flex;
+    opacity: 1;
     height: 30%;
 }
 .card:active {
@@ -80,7 +87,10 @@ nav {
         max-width: 310px;
         max-height: 310px;
     }
+    .card {
+        height: 35vh;
+    }
     .card:hover .info {
         display: none;
     }
-  }
+}
