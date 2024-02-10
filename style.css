@@ -5,8 +5,10 @@
 }
 body {
     scroll-behavior: smooth;
-    background-color: var(--backgroundColor);
     color: var(--defaultTextColor);
+    background-color: #4455a9;
+    background-image: linear-gradient(135deg, #5365c1 0%, #3f82ff 46%, #5beaff 100%);
+    background-position: fixed;    
 }
 nav {
     background-color: var(--navBackColor);
