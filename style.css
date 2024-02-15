@@ -27,13 +27,14 @@ nav {
 }
 .carousel-item img {
     margin: auto;
-    max-width: 512px;
-    max-height: 512px;
+    max-width: 450px;
+    max-height: 450px;
     padding: 10px;
 }
 .carousel-item .info {
     opacity: 0;
     display: flex;
+    text-align: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -58,6 +59,7 @@ nav {
 .card .info {
     display: flex;
     opacity: 0;
+    text-align: center;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -71,7 +73,7 @@ nav {
     z-index: 1;
     color: var(--defaultTextColor);
     pointer-events: none;
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 .card .info a {
     width: 40%;
