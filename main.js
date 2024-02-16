@@ -50,15 +50,19 @@ paganationLinks[0].addEventListener('click' , () => {
         populatePosters(3)
     }
 })
+
 paganationLinks[1].addEventListener('click' , () => {
     populatePosters(1)
 })
+
 paganationLinks[2].addEventListener('click' , () => {
     populatePosters(2)
 })
+
 paganationLinks[3].addEventListener('click' , () => {
     populatePosters(3)
 })
+
 paganationLinks[4].addEventListener('click' , () => {
     if (currentPage < 3) {
         currentPage++
